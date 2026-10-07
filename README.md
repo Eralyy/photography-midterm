@@ -1,47 +1,43 @@
 # Photography Portfolio Website
 
-Topic: Photography Portfolio Website.
-
-A five-page website with a photo gallery, information about the team, sample photography services and a contact form.
+Web Technologies midterm group project. A simple website with photographs, sample services and a contact form.
 
 Website: https://eralyy.github.io/photography-midterm/
 
-## Pages and features
+## Pages
 
-- Home: introduction, featured photograph and Bootstrap columns.
-- About: project description, team members and a list of features.
-- Services: sample session prices in a table with alternating row colours.
-- Gallery: six photographs arranged with CSS Grid, captions and photo credits.
-- Contact: labelled form fields with required-field and email validation.
+- Home: introduction and three Bootstrap columns.
+- About: project description and group members.
+- Services: a table of sample prices and a list of services.
+- Gallery: three photographs with captions and source links.
+- Contact: an HTML form with required fields and email validation.
 
-All pages have the same Flexbox navigation, logo and footer. The layout changes at 768px and 1200px. Smaller screens show one gallery column, medium screens two, and wide screens three. The Services and Contact columns use Bootstrap's 992px breakpoint.
+## Technologies and features
 
-The external stylesheet includes CSS variables, class and ID selectors, hover and focus states, and relative/absolute positioning for the photograph label. Images below the first visible part of the page use lazy loading.
+HTML5, external CSS, Bootstrap 5.3.8 and Roboto from Google Fonts. No JavaScript.
 
-The contact form is a front-end demonstration. It checks the fields and displays a message. It does not send email or store information. Service prices are examples.
+The header uses Flexbox. The gallery uses CSS Grid: one column below 768px, two from 768px, and three from 1200px. The Home page uses Bootstrap columns at the same breakpoints.
 
-## Technologies
+CSS includes three variables, class and ID selectors, hover and focus states, alternating table rows, and relative/absolute positioning for photo captions. Gallery images use lazy loading.
 
-HTML5, CSS3, Bootstrap 5.3.8 and a small JavaScript form handler. Bootstrap CSS, photographs and the Lato font are stored locally.
+The form uses browser validation. When valid, it returns to the Contact form. The inputs have no name attributes, so their values are not included in the URL. There is no message delivery or storage.
 
 ## Team responsibilities
 
-This is the work allocation for the group. Each member should review their assigned parts and understand the whole website before the individual defence.
+Assigned work for each member:
 
-| Group member | Assigned contribution |
+| Member | Responsibility |
 | --- | --- |
-| Aknur Galymzhankyzy | Gallery, CSS styling, photograph selection and credits. |
-| Yerali Karkinbayev | Home and About pages, shared navigation, Bootstrap layout and responsive checks. |
-| Bissentayev Madiyar | Services page and table, Contact page and form validation. |
+| Aknur Galymzhankyzy | Gallery, photographs, source links and CSS. |
+| Yerali Karkinbayev | Home, About, navigation, Bootstrap and responsive layout. |
+| Bissentayev Madiyar | Services, price table and HTML Contact form. |
 
 ## How to open
 
-Open `index.html` in a browser. The local version works without an internet connection. External links need internet access.
+Open `index.html` in a browser. Google Fonts needs internet access; without it, the site uses Arial. Bootstrap and photographs are stored in the project.
 
 ## Sources
 
-Sample photographs are from Unsplash, not taken by the group. Individual source links are on the Gallery page. They are used under the [Unsplash License](https://unsplash.com/license).
+The photographs are sample images from [Unsplash](https://unsplash.com/license), not photos taken by our group. Authors are linked on the Gallery page.
 
-[Bootstrap](https://getbootstrap.com/) is distributed under the MIT License, included in `bootstrap/LICENSE`.
-
-[Lato](https://github.com/google/fonts/tree/main/ofl/lato) is by Lukasz Dziedzic. Its font licence is included in `fonts/OFL.txt`.
+Bootstrap's MIT licence is included in `bootstrap/LICENSE`.

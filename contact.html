@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Practise completing a photography request and find our contact details.">
   <title>Contact | Photography Portfolio</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;display=swap">
   <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="site-header">
+  <header>
     <div class="container header-content">
-      <a class="site-logo" href="index.html"><span class="logo-mark">FP</span> Photography Portfolio</a>
+      <a class="logo" href="index.html"><span>PP</span> Photography Portfolio</a>
       <nav aria-label="Main navigation">
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
@@ -26,59 +26,28 @@
 
   <main class="container">
     <h1>Contact</h1>
-    <p>Choose a session and describe the photos you would like.</p>
+    <p>GitHub: <a href="https://github.com/Eralyy">Eralyy</a></p>
+    <p>Demo form. The browser checks the fields. No message is sent.</p>
+    <form id="contact-form" action="contact.html#contact-form" method="get">
+      <label for="full-name">Name</label>
+      <input type="text" id="full-name" required>
 
-    <div class="row g-4">
-      <section class="col-12 col-lg-8">
-        <h2>Photography request</h2>
-        <p>Demo form. Messages are not sent.</p>
-        <form id="contact-form" class="contact-form">
-          <div class="form-field">
-            <label for="full-name">Full name (required)</label>
-            <input type="text" id="full-name" name="fullName" required autocomplete="name" maxlength="80">
-          </div>
+      <label for="email">Email</label>
+      <input type="email" id="email" required>
 
-          <div class="form-field">
-            <label for="email">Email (required)</label>
-            <input type="email" id="email" name="email" required autocomplete="email" maxlength="120">
-          </div>
+      <label for="message">Message</label>
+      <textarea id="message" rows="4" required></textarea>
 
-          <div class="form-field">
-            <label for="session">Session (required)</label>
-            <select id="session" name="session" required>
-              <option value="">Select a session</option>
-              <option value="portrait">Portrait</option>
-              <option value="outdoor">Outdoor</option>
-              <option value="event">Event</option>
-            </select>
-          </div>
-
-          <div class="form-field">
-            <label for="message">Message (required)</label>
-            <textarea id="message" name="message" rows="4" required minlength="10" maxlength="1000"></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-dark">Check request</button>
-          <p id="form-status" role="status" aria-live="polite" hidden></p>
-        </form>
-      </section>
-
-      <aside class="col-12 col-lg-4">
-        <div class="panel">
-          <h2>Contact details</h2>
-          <p>GitHub: <a href="https://github.com/Eralyy">Eralyy</a></p>
-        </div>
-      </aside>
-    </div>
+      <button type="submit" class="btn btn-outline-secondary btn-sm mt-3">Check form</button>
+    </form>
   </main>
 
-  <footer class="site-footer">
+  <footer>
     <div class="container text-center">
-      <address>Contact: <a href="https://github.com/Eralyy">Eralyy on GitHub</a></address>
+      <p>Contact: <a href="https://github.com/Eralyy">Eralyy on GitHub</a></p>
       <p>&copy; 2026 Photography Portfolio</p>
-      <p><a href="https://github.com/Eralyy">GitHub</a> | <a href="https://unsplash.com/">Unsplash</a> | <a href="gallery.html#photo-credits">Photo credits</a></p>
+      <p><a href="https://github.com/Eralyy">GitHub</a> | <a href="https://unsplash.com/">Unsplash</a></p>
     </div>
   </footer>
-  <script src="js/contact.js"></script>
 </body>
 </html>

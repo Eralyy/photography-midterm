@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Six sample photographs with captions and photographer credits.">
   <title>Gallery | Photography Portfolio</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;display=swap">
   <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="site-header">
+  <header>
     <div class="container header-content">
-      <a class="site-logo" href="index.html"><span class="logo-mark">FP</span> Photography Portfolio</a>
+      <a class="logo" href="index.html"><span>PP</span> Photography Portfolio</a>
       <nav aria-label="Main navigation">
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
@@ -25,55 +25,35 @@
   </header>
 
   <main class="container">
-    <h1>Photo Gallery</h1>
-    <p>Nature, city scenes and details. These sample photographs are by the photographers credited below.</p>
-
-    <div class="gallery-grid">
+    <h1>Gallery</h1>
+    <p>Three sample photographs from Unsplash.</p>
+    <div class="gallery">
       <figure>
-        <img src="images/forest-path.jpg" alt="An autumn forest path beside a fence, with golden sunlight shining through the trees." width="1200" height="800">
-        <figcaption><strong>Forest Path</strong><br>A path between trees in warm sunlight.</figcaption>
-      </figure>
-      <figure>
-        <img src="images/mountain-lake.jpg" alt="A calm mountain lake bordered by evergreen trees and steep rocky slopes." width="1200" height="800" loading="lazy">
-        <figcaption><strong>Mountain Lake</strong><br>Still water surrounded by forest and mountains.</figcaption>
+        <img src="images/forest-path.jpg" alt="An autumn forest path beside a fence, with golden sunlight shining through the trees." width="1200" height="800" loading="lazy">
+        <figcaption>Forest Path</figcaption>
       </figure>
       <figure>
         <img src="images/city-skyline.jpg" alt="An elevated view of dense Manhattan buildings with illuminated windows." width="1200" height="800" loading="lazy">
-        <figcaption><strong>City Skyline</strong><br>A view across the buildings of Manhattan.</figcaption>
-      </figure>
-      <figure>
-        <img src="images/city-buildings.jpg" alt="Older brick buildings beside a modern building in Pittsburgh." width="1200" height="1200" loading="lazy">
-        <figcaption><strong>City Buildings</strong><br>Old and new buildings in Pittsburgh.</figcaption>
+        <figcaption>City Skyline</figcaption>
       </figure>
       <figure>
         <img src="images/leaf-detail.jpg" alt="A close-up of a green leaf showing its branching veins." width="1200" height="800" loading="lazy">
-        <figcaption><strong>Leaf Detail</strong><br>The branching veins of a green leaf.</figcaption>
-      </figure>
-      <figure>
-        <img src="images/flower-detail.jpg" alt="Blue and purple flower petals photographed close up." width="1200" height="800" loading="lazy">
-        <figcaption><strong>Flower Detail</strong><br>A close look at blue and purple flower petals.</figcaption>
+        <figcaption>Leaf Detail</figcaption>
       </figure>
     </div>
-
-    <section class="page-section" id="photo-credits">
-      <h2>Photo credits</h2>
-      <p>Images are used under the <a href="https://unsplash.com/license">Unsplash License</a>.</p>
-      <ul>
-        <li>Forest Path: <a href="https://unsplash.com/photos/pathway-between-inline-trees-during-golden-hour-ps2daRcXYes">Lukasz Szmigiel</a></li>
-        <li>Mountain Lake: <a href="https://unsplash.com/photos/banff-national-park-canada-oV4bR3YoR_s">Luca Bravo</a></li>
-        <li>City Skyline: <a href="https://unsplash.com/photos/city-buildings-pZ9kjIzmlrQ">Sam Trotman</a></li>
-        <li>City Buildings: <a href="https://unsplash.com/photos/city-buildings-bbjORutHY8E">Vidar Nordli-Mathisen</a></li>
-        <li>Leaf Detail: <a href="https://unsplash.com/photos/close-up-photography-of-green-leaf-8XFcmzA4WO8">Vadim Gromov</a></li>
-        <li>Flower Detail: <a href="https://unsplash.com/photos/blue-flower-petals-in-close-up-photography-b6NTA4OtSwQ">Markus Spiske</a></li>
-      </ul>
-    </section>
+    <h2 class="mt-3" id="photo-credits">Photo credits</h2>
+    <ul>
+      <li>Forest Path: <a href="https://unsplash.com/photos/pathway-between-inline-trees-during-golden-hour-ps2daRcXYes">Lukasz Szmigiel</a></li>
+      <li>City Skyline: <a href="https://unsplash.com/photos/city-buildings-pZ9kjIzmlrQ">Sam Trotman</a></li>
+      <li>Leaf Detail: <a href="https://unsplash.com/photos/close-up-photography-of-green-leaf-8XFcmzA4WO8">Vadim Gromov</a></li>
+    </ul>
   </main>
 
-  <footer class="site-footer">
+  <footer>
     <div class="container text-center">
-      <address>Contact: <a href="https://github.com/Eralyy">Eralyy on GitHub</a></address>
+      <p>Contact: <a href="https://github.com/Eralyy">Eralyy on GitHub</a></p>
       <p>&copy; 2026 Photography Portfolio</p>
-      <p><a href="https://github.com/Eralyy">GitHub</a> | <a href="https://unsplash.com/">Unsplash</a> | <a href="gallery.html#photo-credits">Photo credits</a></p>
+      <p><a href="https://github.com/Eralyy">GitHub</a> | <a href="https://unsplash.com/">Unsplash</a></p>
     </div>
   </footer>
 </body>
