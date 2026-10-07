@@ -22,6 +22,7 @@ A Web Technologies midterm group project. The website presents nature, city and 
 - The header uses Flexbox and changes from vertical to horizontal at 768px.
 - Gallery photographs have captions, alternative text and lazy loading. Captions use relative and absolute positioning.
 - Services has a pricing table with alternating rows using :nth-child(even).
+- Services has a pricing table with alternating rows using ":nth-child(even)".
 - Contact has required name, email and message fields. The browser checks them, but the demo does not send messages.
 - External CSS uses classes, an ID, three color variables, and hover and focus styles. Bootstrap classes provide spacing, centered text, containers and a button.
 
@@ -34,6 +35,7 @@ HTML5, CSS3, Bootstrap 5.3.8 and Roboto from Google Fonts. No JavaScript. Sample
 [Open the website](https://eralyy.github.io/photography-midterm/)
 
 To open locally, open index.html in a browser.
+To open locally, open "index.html" in a browser.
 
 ## index.html
 
