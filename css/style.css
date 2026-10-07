@@ -1,26 +1,31 @@
 :root {
   --text-color: #222;
-  --border-color: #aaa;
-  --light-color: #eee;
+  --border-color: #ccc;
+  --light-color: #f5f5f5;
 }
 
 body {
   font-family: Roboto, Arial, sans-serif;
   font-size: 16px;
+  line-height: 1.6;
   color: var(--text-color);
   background: white;
 }
 
 .container {
   max-width: 960px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 h1 {
-  font-size: 26px;
+  font-size: 28px;
+  margin-bottom: 12px;
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 22px;
+  margin-bottom: 12px;
 }
 
 h3 {
@@ -28,8 +33,9 @@ h3 {
 }
 
 header, footer {
-  padding: 12px 0;
+  padding: 16px 0;
   border-bottom: 1px solid var(--border-color);
+  background: var(--light-color);
 }
 
 .header-content, .nav-links {
@@ -42,6 +48,12 @@ header, footer {
   flex-direction: column;
 }
 
+.logo {
+  font-size: 18px;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
 .logo span {
   font-weight: bold;
 }
@@ -50,10 +62,21 @@ header, footer {
   list-style: none;
   margin: 0;
   padding: 0;
+  gap: 4px;
+}
+
+.nav-links a {
+  display: block;
+  padding: 6px 8px;
 }
 
 a[aria-current="page"] {
   font-weight: bold;
+  background: #e4e4e4;
+}
+
+a {
+  color: #254c75;
 }
 
 a:hover {
@@ -66,8 +89,12 @@ a:focus, button:focus, input:focus, textarea:focus {
 }
 
 main {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 28px;
+  padding-bottom: 32px;
+}
+
+main li {
+  margin-bottom: 6px;
 }
 
 .gallery {
@@ -92,7 +119,7 @@ main {
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 4px;
+  padding: 6px 8px;
   background: white;
 }
 
@@ -107,11 +134,11 @@ table {
 
 th, td {
   border: 1px solid var(--border-color);
-  padding: 6px;
+  padding: 10px;
   text-align: left;
 }
 
-tbody tr:nth-child(even) {
+thead, tbody tr:nth-child(even) {
   background: var(--light-color);
 }
 
@@ -121,17 +148,24 @@ tbody tr:nth-child(even) {
 
 label {
   display: block;
-  margin-top: 12px;
+  margin-top: 16px;
+  margin-bottom: 4px;
 }
 
 input, textarea {
   width: 100%;
   border: 1px solid var(--border-color);
-  padding: 4px;
+  padding: 8px;
+  font: inherit;
+}
+
+textarea {
+  resize: vertical;
 }
 
 .btn {
   border-radius: 0;
+  padding: 8px 16px;
 }
 
 .btn:hover {
@@ -142,6 +176,7 @@ input, textarea {
 footer {
   border-top: 1px solid var(--border-color);
   border-bottom: 0;
+  font-size: 14px;
 }
 
 footer p {
@@ -149,9 +184,14 @@ footer p {
 }
 
 @media (min-width: 768px) {
+  body {
+    font-size: 17px;
+  }
+
   .header-content {
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
   }
 
   .gallery {

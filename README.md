@@ -9,7 +9,7 @@ Website: https://eralyy.github.io/photography-midterm/
 - Home: introduction and three Bootstrap columns.
 - About: project description and group members.
 - Services: a table of sample prices and a list of services.
-- Gallery: three photographs with captions and source links.
+- Gallery: three photographs with captions.
 - Contact: an HTML form with required fields and email validation.
 
 ## Technologies and features
@@ -38,6 +38,10 @@ Open `index.html` in a browser. Google Fonts needs internet access; without it, 
 
 ## Sources
 
-The photographs are sample images from [Unsplash](https://unsplash.com/license), not photos taken by our group. Authors are linked on the Gallery page.
+The photographs are sample images from [Unsplash](https://unsplash.com/license), not photos taken by our group.
+
+- Forest Path: [Lukasz Szmigiel](https://unsplash.com/photos/pathway-between-inline-trees-during-golden-hour-ps2daRcXYes).
+- City Skyline: [Sam Trotman](https://unsplash.com/photos/city-buildings-pZ9kjIzmlrQ).
+- Leaf Detail: [Vadim Gromov](https://unsplash.com/photos/close-up-photography-of-green-leaf-8XFcmzA4WO8).
 
 Bootstrap's MIT licence is included in `bootstrap/LICENSE`.
