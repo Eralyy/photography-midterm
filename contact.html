@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Practise completing a photography request and find our contact details.">
+  <title>Contact | Photography Portfolio</title>
+  <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <a class="site-logo" href="index.html"><span class="logo-mark">FP</span> Photography Portfolio</a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Contact</h1>
+    <p>Choose a session and describe the photos you would like.</p>
+
+    <div class="row g-4">
+      <section class="col-12 col-lg-8">
+        <h2>Photography request</h2>
+        <p>Demo form. Messages are not sent.</p>
+        <form id="contact-form" class="contact-form">
+          <div class="form-field">
+            <label for="full-name">Full name (required)</label>
+            <input type="text" id="full-name" name="fullName" required autocomplete="name" maxlength="80">
+          </div>
+
+          <div class="form-field">
+            <label for="email">Email (required)</label>
+            <input type="email" id="email" name="email" required autocomplete="email" maxlength="120">
+          </div>
+
+          <div class="form-field">
+            <label for="session">Session (required)</label>
+            <select id="session" name="session" required>
+              <option value="">Select a session</option>
+              <option value="portrait">Portrait</option>
+              <option value="outdoor">Outdoor</option>
+              <option value="event">Event</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="message">Message (required)</label>
+            <textarea id="message" name="message" rows="4" required minlength="10" maxlength="1000"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-dark">Check request</button>
+          <p id="form-status" role="status" aria-live="polite" hidden></p>
+        </form>
+      </section>
+
+      <aside class="col-12 col-lg-4">
+        <div class="panel">
+          <h2>Contact details</h2>
+          <p>GitHub: <a href="https://github.com/Eralyy">Eralyy</a></p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container text-center">
+      <address>Contact: <a href="https://github.com/Eralyy">Eralyy on GitHub</a></address>
+      <p>&copy; 2026 Photography Portfolio</p>
+      <p><a href="https://github.com/Eralyy">GitHub</a> | <a href="https://unsplash.com/">Unsplash</a> | <a href="gallery.html#photo-credits">Photo credits</a></p>
+    </div>
+  </footer>
+  <script src="js/contact.js"></script>
+</body>
+</html>
