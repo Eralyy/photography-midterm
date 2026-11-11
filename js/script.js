@@ -248,6 +248,7 @@ function setupGallery() {
     currentIndex = visiblePhotos().indexOf(this.closest(".gallery-item"));
     showPhoto(currentIndex);
     lightbox.attr("aria-hidden", "false").fadeIn(200);
+    lightbox.find(".lightbox-content").css("top", "12px").animate({ top: "0px" }, 200);
   });
 
   function closeLightbox() {
