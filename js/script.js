@@ -96,7 +96,6 @@ function setupServices() {
   const saveButton = document.getElementById("service-save");
   const cancelButton = document.getElementById("service-cancel");
   const status = document.getElementById("service-status");
-  const storageKey = "photography-services-v1";
   const startingServices = [
     { name: "Portrait", price: 10000, duration: "30 minutes" },
     { name: "Outdoor", price: 15000, duration: "1 hour" },
@@ -104,22 +103,9 @@ function setupServices() {
   ];
   let services = startingServices;
 
-  try {
-    const saved = JSON.parse(localStorage.getItem(storageKey));
-    if (Array.isArray(saved)) services = saved;
-  } catch (error) {
-    // The table can still be edited when browser storage is unavailable.
-  }
-
-  function saveServices() {
-    try {
-      localStorage.setItem(storageKey, JSON.stringify(services));
-      status.textContent = "Service list updated.";
-      status.className = "status-message is-success";
-    } catch (error) {
-      status.textContent = "Service list updated for this page. Browser storage is unavailable.";
-      status.className = "status-message is-error";
-    }
+  function showStatus() {
+    status.textContent = "Service list updated. Changes last until the page is reloaded.";
+    status.className = "status-message is-success";
   }
 
   function clearForm() {
@@ -166,7 +152,7 @@ function setupServices() {
         services.splice(index, 1);
         clearForm();
         renderTable();
-        saveServices();
+        showStatus();
       });
 
       row.cells[3].append(editButton, deleteButton);
@@ -193,7 +179,7 @@ function setupServices() {
     }
     clearForm();
     renderTable();
-    saveServices();
+    showStatus();
   });
 
   cancelButton.addEventListener("click", clearForm);
@@ -280,11 +266,5 @@ function setupGallery() {
   $("#lightbox-next").on("click", function () { move(1); });
   lightbox.on("click", function (event) {
     if (event.target === this) closeLightbox();
-  });
-  $(document).on("keydown", function (event) {
-    if (lightbox.attr("aria-hidden") === "true") return;
-    if (event.key === "Escape") closeLightbox();
-    if (event.key === "ArrowLeft") move(-1);
-    if (event.key === "ArrowRight") move(1);
   });
 }
