@@ -91,10 +91,7 @@ function setupServices() {
   const name = document.getElementById("service-name");
   const price = document.getElementById("service-price");
   const duration = document.getElementById("service-duration");
-  const id = document.getElementById("service-id");
   const body = document.getElementById("services-body");
-  const saveButton = document.getElementById("service-save");
-  const cancelButton = document.getElementById("service-cancel");
   const status = document.getElementById("service-status");
   const startingServices = [
     { name: "Portrait", price: 10000, duration: "30 minutes" },
@@ -102,6 +99,7 @@ function setupServices() {
     { name: "Event", price: 25000, duration: "2 hours" }
   ];
   let services = startingServices;
+  let editingIndex = -1;
 
   function showStatus() {
     status.textContent = "Service list updated. Changes last until the page is reloaded.";
@@ -110,9 +108,6 @@ function setupServices() {
 
   function clearForm() {
     form.reset();
-    id.value = "";
-    saveButton.textContent = "Add service";
-    cancelButton.hidden = true;
   }
 
   function renderTable() {
@@ -126,30 +121,57 @@ function setupServices() {
       const row = body.insertRow();
       row.innerHTML = '<th scope="row"></th><td></td><td></td><td class="service-actions"></td>';
       row.cells[0].textContent = service.name;
-      row.cells[1].textContent = Number(service.price).toLocaleString("en-US");
+      row.cells[1].textContent = editingIndex === index ? service.price : Number(service.price).toLocaleString("en-US");
       row.cells[2].textContent = service.duration;
+
+      if (editingIndex === index) {
+        for (let i = 0; i < 3; i++) {
+          row.cells[i].contentEditable = "true";
+          row.cells[i].classList.add("border-primary");
+        }
+      }
 
       const editButton = document.createElement("button");
       editButton.type = "button";
       editButton.className = "btn btn-sm btn-outline-secondary";
-      editButton.textContent = "Edit";
+      editButton.textContent = editingIndex === index ? "Save" : "Edit";
       editButton.addEventListener("click", function () {
-        id.value = String(index);
-        name.value = service.name;
-        price.value = service.price;
-        duration.value = service.duration;
-        saveButton.textContent = "Save changes";
-        cancelButton.hidden = false;
-        name.focus();
+        if (editingIndex !== index) {
+          editingIndex = index;
+          renderTable();
+          body.rows[index].cells[0].focus();
+          return;
+        }
+        const updated = {
+          name: row.cells[0].textContent.trim(),
+          price: Number(row.cells[1].textContent.trim()),
+          duration: row.cells[2].textContent.trim()
+        };
+        if (!updated.name || !Number.isFinite(updated.price) ||
+            updated.price <= 0 || !updated.duration) {
+          status.textContent = "Enter a name, a positive price and a duration.";
+          status.className = "status-message is-error";
+          return;
+        }
+        services[index] = updated;
+        editingIndex = -1;
+        renderTable();
+        showStatus();
       });
 
       const deleteButton = document.createElement("button");
       deleteButton.type = "button";
       deleteButton.className = "btn btn-sm btn-outline-secondary";
-      deleteButton.textContent = "Delete";
+      deleteButton.textContent = editingIndex === index ? "Cancel" : "Delete";
       deleteButton.addEventListener("click", function () {
+        if (editingIndex === index) {
+          editingIndex = -1;
+          renderTable();
+          return;
+        }
         if (!window.confirm('Delete "' + service.name + '"?')) return;
         services.splice(index, 1);
+        editingIndex = -1;
         clearForm();
         renderTable();
         showStatus();
@@ -172,17 +194,13 @@ function setupServices() {
       status.className = "status-message is-error";
       return;
     }
-    if (id.value === "") {
-      services.push(newService);
-    } else {
-      services[Number(id.value)] = newService;
-    }
+    services.push(newService);
+    editingIndex = -1;
     clearForm();
     renderTable();
     showStatus();
   });
 
-  cancelButton.addEventListener("click", clearForm);
   renderTable();
 }
 
