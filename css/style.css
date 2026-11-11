@@ -103,9 +103,44 @@ main li {
   gap: 16px;
 }
 
+.gallery-controls {
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+
+.gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-btn.is-active {
+  color: white;
+  background: #254c75;
+  border-color: #254c75;
+}
+
+.gallery-item[hidden] {
+  display: none;
+}
+
 .gallery figure {
   position: relative;
   margin: 0;
+}
+
+.gallery-trigger {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.gallery-trigger:focus {
+  outline: 2px solid var(--text-color);
+  outline-offset: 2px;
 }
 
 .gallery img {
@@ -121,6 +156,50 @@ main li {
   left: 0;
   padding: 6px 8px;
   background: white;
+  pointer-events: none;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  overflow: auto;
+  padding: 24px 16px;
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 42px 16px 16px;
+  background: white;
+  text-align: center;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+}
+
+#lightbox-image {
+  display: block;
+  max-width: 100%;
+  max-height: 70vh;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+#lightbox-caption {
+  margin: 12px 0;
+}
+
+.lightbox-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
 }
 
 .table-wrap {
@@ -163,6 +242,89 @@ textarea {
   resize: vertical;
 }
 
+.registration {
+  max-width: 500px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+}
+
+.field-feedback {
+  display: block;
+  min-height: 1.4em;
+  color: #a22525;
+}
+
+input.is-invalid {
+  border-color: #a22525;
+}
+
+input.is-valid {
+  border-color: #267342;
+}
+
+.password-strength {
+  margin-top: 8px;
+  padding: 4px 8px;
+  border-left: 4px solid var(--border-color);
+  background: var(--light-color);
+}
+
+.strength-weak {
+  border-color: #a22525;
+  color: #802020;
+}
+
+.strength-medium {
+  border-color: #9a6800;
+  color: #694800;
+}
+
+.strength-strong {
+  border-color: #267342;
+  color: #205b35;
+}
+
+.status-message {
+  margin-top: 12px;
+}
+
+.status-message.is-error {
+  color: #a22525;
+}
+
+.status-message.is-success {
+  color: #205b35;
+}
+
+.service-form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0 16px;
+}
+
+.service-form-grid > div {
+  min-width: 0;
+}
+
+.service-form-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.service-actions {
+  min-width: 155px;
+  white-space: nowrap;
+}
+
+.service-actions .btn + .btn {
+  margin-left: 8px;
+}
+
+.service-form-buttons [hidden] {
+  display: none;
+}
+
 .btn {
   border-radius: 0;
   padding: 8px 16px;
@@ -196,6 +358,10 @@ footer p {
 
   .gallery {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service-form-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
