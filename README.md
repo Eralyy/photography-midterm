@@ -31,7 +31,7 @@ HTML5, CSS3, Bootstrap 5.3.8, JavaScript, jQuery 4.0.0 and Roboto from Google Fo
 
 [Open the website](https://eralyy.github.io/photography-midterm/)
 
-To open locally, open `index.html` in a browser. The project is a static website, so it does not need a server or database.
+To open locally, open index.html in a browser. The project is a static website, so it does not need a server or database.
 
 ## Midterm screenshots
 
