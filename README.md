@@ -4,54 +4,56 @@ Topic: Photography Portfolio Website.
 
 ## Description
 
-A Web Technologies midterm group project. The website presents nature, city and close-up photographs, sample photography services and a contact form.
+We made this photography website for our Web Technologies midterm and added interactive features for the endterm. It has photos, sample services and prices, and forms you can try in the browser.
 
 ## Group members and responsibilities
 
-| Member | Project part |
-| --- | --- |
-| Aknur Galymzhankyzy | Gallery page, photographs, gallery Grid and CSS styling |
-| Yerali Karkinbayev | Home and About pages, navigation, Flexbox header and responsive layout |
-| Bissentayev Madiyar | Services and Contact pages, pricing table and form |
+| Member | Midterm work | Endterm work |
+| --- | --- | --- |
+| Aknur Galymzhankyzy | Gallery page, photos, CSS Grid and gallery styles | JavaScript for the forms, search, service table and lightbox; jQuery; README |
+| Yerali Karkinbayev | Home and About pages, navigation, Flexbox header and responsive layout | CSS for the new forms, filters, table and lightbox |
+| Bissentayev Madiyar | Services and Contact pages, pricing table and contact form | HTML for the registration form, service controls, gallery filters and lightbox |
 
 ## Features
 
-- Five connected pages: Home, About, Services, Gallery and Contact.
-- Each page has a header with a logo and navigation, a main area and a footer with contact information, copyright and social links.
-- Home uses the Bootstrap grid. Gallery uses CSS Grid. Both show one column below 768px, two from 768px and three from 1200px.
-- The header uses Flexbox and changes from vertical to horizontal at 768px.
-- Gallery photographs have captions, alternative text and lazy loading. Captions use relative and absolute positioning.
-- Services has a pricing table with alternating rows using ":nth-child(even)".
-- Contact has required name, email and message fields. The browser checks them, but the demo does not send messages.
-- External CSS uses classes, an ID, three color variables, and hover and focus styles. Bootstrap classes provide spacing, centered text, containers and a button.
+- Five connected pages: Home, About, Services, Gallery and Contact. Each page has a header, navigation, main content and footer.
+- The layout uses Bootstrap, Flexbox and CSS Grid. The photos and page layout adjust for phones, tablets and wider screens.
+- The Contact page still has the original contact form. It checks required fields but does not send a message.
+- The new registration demo checks name, email, password and password confirmation. It shows feedback while you type, checks email with a regular expression and shows weak, medium or strong password strength. It does not create an account.
+- On Gallery, you can search photos by name, filter them by category and open them in a lightbox. The arrows move between photos, and jQuery adds fade effects.
+- On Services, you can add, view, edit and delete rows in the table. Delete asks for confirmation. The changes stay on the page until you reload it.
 
 ## Technologies
 
-HTML5, CSS3, Bootstrap 5.3.8 and Roboto from Google Fonts. No JavaScript. Sample photographs are from Unsplash.
+HTML5, CSS3, Bootstrap 5.3.8, JavaScript, jQuery 4.0.0 and Roboto from Google Fonts. Bootstrap and jQuery are stored in this repository. The sample photos are from Unsplash.
 
 ## Website
 
 [Open the website](https://eralyy.github.io/photography-midterm/)
 
-To open locally, open "index.html" in a browser.
+To open locally, open `index.html` in a browser. The project is a static website, so it does not need a server or database.
 
-## index.html
+## Midterm screenshots
+
+These screenshots show the original midterm pages, before the endterm features were added.
+
+### index.html
 
 ![Home](screenshots/index.jpg)
 
-## about.html
+### about.html
 
 ![About](screenshots/about.jpg)
 
-## services.html
+### services.html
 
 ![Services](screenshots/services.jpg)
 
-## gallery.html
+### gallery.html
 
 ![Gallery](screenshots/gallery.jpg)
 
-## contact.html
+### contact.html
 
 ![Contact](screenshots/contact.jpg)
 
