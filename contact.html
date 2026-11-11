@@ -6,7 +6,7 @@
   <title>Contact | Photography Portfolio</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;display=swap">
   <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="stylesheet" href="css/style.css?v=4">
 </head>
 <body>
   <header>
@@ -40,6 +40,32 @@
 
       <button type="submit" class="btn btn-outline-secondary mt-3">Check form</button>
     </form>
+
+    <section class="registration mt-4" aria-labelledby="registration-title">
+      <h2 id="registration-title">Registration demo</h2>
+      <p>This form checks your input in the browser. It does not create an account or store your password.</p>
+      <form id="registration-form" novalidate>
+        <label for="reg-name">Name</label>
+        <input type="text" id="reg-name" autocomplete="name" required aria-describedby="reg-name-feedback">
+        <small id="reg-name-feedback" class="field-feedback" aria-live="polite"></small>
+
+        <label for="reg-email">Email</label>
+        <input type="email" id="reg-email" autocomplete="email" required aria-describedby="reg-email-feedback">
+        <small id="reg-email-feedback" class="field-feedback" aria-live="polite"></small>
+
+        <label for="reg-password">Password</label>
+        <input type="password" id="reg-password" autocomplete="new-password" required aria-describedby="password-strength reg-password-feedback">
+        <div id="password-strength" class="password-strength" aria-live="polite">Password strength: enter a password</div>
+        <small id="reg-password-feedback" class="field-feedback" aria-live="polite"></small>
+
+        <label for="reg-confirm">Confirm password</label>
+        <input type="password" id="reg-confirm" autocomplete="new-password" required aria-describedby="reg-confirm-feedback">
+        <small id="reg-confirm-feedback" class="field-feedback" aria-live="polite"></small>
+
+        <button type="submit" class="btn btn-outline-secondary mt-3">Check registration</button>
+        <p id="registration-status" class="status-message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
   </main>
 
   <footer>
@@ -49,5 +75,6 @@
       <p><a href="https://github.com/Eralyy">GitHub</a> | <a href="https://unsplash.com/">Unsplash</a></p>
     </div>
   </footer>
+  <script src="js/script.js"></script>
 </body>
 </html>

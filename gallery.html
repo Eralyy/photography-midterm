@@ -6,7 +6,7 @@
   <title>Gallery | Photography Portfolio</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;display=swap">
   <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="stylesheet" href="css/style.css?v=4">
 </head>
 <body>
   <header>
@@ -27,21 +27,50 @@
   <main class="container">
     <h1>Gallery</h1>
     <p>Nature, city scenes and close-up details.</p>
+    <div class="gallery-controls">
+      <label for="gallery-search">Search photos</label>
+      <input type="search" id="gallery-search" placeholder="Search by title or category">
+      <div class="gallery-filters mt-3" role="group" aria-label="Filter photos by category">
+        <button type="button" class="btn btn-outline-secondary filter-btn is-active" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="btn btn-outline-secondary filter-btn" data-filter="nature" aria-pressed="false">Nature</button>
+        <button type="button" class="btn btn-outline-secondary filter-btn" data-filter="city" aria-pressed="false">City</button>
+        <button type="button" class="btn btn-outline-secondary filter-btn" data-filter="details" aria-pressed="false">Details</button>
+      </div>
+    </div>
     <div class="gallery">
-      <figure>
-        <img src="images/forest-path.jpg" alt="An autumn forest path beside a fence, with golden sunlight shining through the trees." width="1200" height="800" loading="lazy">
+      <figure class="gallery-item" data-category="nature">
+        <button type="button" class="gallery-trigger" aria-label="Open Forest Path photo">
+          <img src="images/forest-path.jpg" alt="An autumn forest path beside a fence, with golden sunlight shining through the trees." width="1200" height="800" loading="lazy">
+        </button>
         <figcaption>Forest Path</figcaption>
       </figure>
-      <figure>
-        <img src="images/city-skyline.jpg" alt="An elevated view of dense Manhattan buildings with illuminated windows." width="1200" height="800" loading="lazy">
+      <figure class="gallery-item" data-category="city">
+        <button type="button" class="gallery-trigger" aria-label="Open City Skyline photo">
+          <img src="images/city-skyline.jpg" alt="An elevated view of dense Manhattan buildings with illuminated windows." width="1200" height="800" loading="lazy">
+        </button>
         <figcaption>City Skyline</figcaption>
       </figure>
-      <figure>
-        <img src="images/leaf-detail.jpg" alt="A close-up of a green leaf showing its branching veins." width="1200" height="800" loading="lazy">
+      <figure class="gallery-item" data-category="details">
+        <button type="button" class="gallery-trigger" aria-label="Open Leaf Detail photo">
+          <img src="images/leaf-detail.jpg" alt="A close-up of a green leaf showing its branching veins." width="1200" height="800" loading="lazy">
+        </button>
         <figcaption>Leaf Detail</figcaption>
       </figure>
     </div>
+    <p id="gallery-empty" class="status-message" role="status" hidden>No matching photos.</p>
   </main>
+
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Photo viewer">
+    <div class="lightbox-content">
+      <button type="button" id="lightbox-close" class="btn btn-light lightbox-close" aria-label="Close photo viewer">&times;</button>
+      <img id="lightbox-image" src="" alt="">
+      <p id="lightbox-caption"></p>
+      <div class="lightbox-controls">
+        <button type="button" id="lightbox-prev" class="btn btn-light" aria-label="Previous photo">&larr; Previous</button>
+        <button type="button" id="lightbox-next" class="btn btn-light" aria-label="Next photo">Next &rarr;</button>
+      </div>
+    </div>
+  </div>
 
   <footer>
     <div class="container text-center">
@@ -50,5 +79,7 @@
       <p><a href="https://github.com/Eralyy">GitHub</a> | <a href="https://unsplash.com/">Unsplash</a></p>
     </div>
   </footer>
+  <script src="js/jquery-4.0.0.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
